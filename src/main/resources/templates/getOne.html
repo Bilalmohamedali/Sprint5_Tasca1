@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <link href="css/styles.css" rel="stylesheet"/>
+  <title>Title</title>
+</head>
+
+<h4>Datos de la sucursal </h4>
+<tbody>
+<table class="default">
+  <tr>
+    <th>ID</th>
+    <th>NOMBRE</th>
+    <th>PAIS</th>
+    <th>TIPO</th>
+  </tr>
+  <tr th:each="sucursal: ${sucursals}">
+
+    <td th:text="${sucursal.pk_SucursalID}"></td>
+    <td th:text="${sucursal.nomSucursal}"></td>
+    <td th:text="${sucursal.paisSucursal}"></td>
+    <td th:text="${sucursal.tipusSucursal}"></td>
+    <br/>
+  </tr>
+</table>
+</tbody>
+<a class="btn btn-warning" th:href="@{/index}">Indice</a>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link href="css/styles.css" rel="stylesheet"/>
+  <title>Title</title>
+</head>
+
+<h4>Añadir Sucursal </h4>
+
+<form th:object="${sucursal}" th:action="@{/update}" method="post">
+  <div class="form-group">
+    <label for="pk_SucursalID">Id de la Sucursal</label>
+    <input th:field="*{pk_SucursalID}" id="pk_SucursalID" placeholder="Escribe el id de la sucursal" type="text"
+           class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="nomSucursal">Nombre de la Sucursal</label>
+    <input th:field="*{nomSucursal}" id="nomSucursal" placeholder="Escribe el nombre de la sucursal" type="text"
+           class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="paisSucursal">Pais</label>
+    <input th:field="*{paisSucursal}" id="paisSucursal" placeholder="Escribe el pais de la sucursal" type="text"
+           class="form-control">
+  </div>
+
+  <button class="btn btn-success" type="submit">Guardar</button>
+  &nbsp;<a class="btn btn-warning" th:href="@{/getAll}">Ver todos</a>
+
+</form>
+
+</html>
